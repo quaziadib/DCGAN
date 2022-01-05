@@ -95,3 +95,6 @@ for epoch in range(NUM_EPOCHS):
                 writer_real.add_image("Real", img_grid_real, global_step = step)
                 writer_fake.add_image("Fake", img_grid_fake, global_step=step)
             step+=1
+            torch.save(disc.state_dict(), "model_weight/discriminator.pth")
+            torch.save(gen.state_dict(), "model_weight/generator.pth")
+
