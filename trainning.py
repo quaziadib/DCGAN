@@ -10,7 +10,7 @@ from torch.utils.tensorboard import SummaryWriter
 from model import Discriminator, Generator, initialize_weights
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+print(device)
 LEARNING_RATE = 2e-4
 BATCH_SIZE = 128
 IMAGE_SIZE = 64
@@ -95,11 +95,3 @@ for epoch in range(NUM_EPOCHS):
                 writer_real.add_image("Real", img_grid_real, global_step = step)
                 writer_fake.add_image("Fake", img_grid_fake, global_step=step)
             step+=1
-
-
-
-
-
-
-        
-
